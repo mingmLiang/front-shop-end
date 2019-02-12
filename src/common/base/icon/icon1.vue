@@ -1,0 +1,21 @@
+<template lang="html">
+  <p class="icon"><slot name='title'></slot></p>
+</template>
+<script>
+  export default {}
+</script>
+<style lang="less" scoped>
+  @import '../../../assets/fz.less';
+.icon{
+  display: inline-block;
+  font-size: @font-size-small-s;
+  color: @color-text3;
+  background-color: @color-main1;
+  line-height: @font-size-medium;
+  .ba(@color-main1,50%);
+  width: .32rem;
+  height: .32rem;
+  line-height: .32rem;
+  text-align: center;
+}
+</style>

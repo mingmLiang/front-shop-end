@@ -1,0 +1,6 @@
+﻿1.安装依赖
+npm install
+2.运行项目
+npm run dev
+3.生产页面
+npm run build

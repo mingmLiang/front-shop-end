@@ -1,0 +1,413 @@
+
+@siteConfiguration: 'qiangtaotao';
+
+.notice{
+    color: @color-main1 !important;
+}
+
+.unnotice{
+  color:@color-text2 !important;
+}
+
+
+//1.主色
+@color-main1: #ee3f43;
+@color-main2:#7e07a9;
+
+//2.辅色
+@color-assist:#ffa518;
+@color-assist1:#ff797c;
+@color-assist2:#fff3e0;
+@color-assist3:#e5e5e5;
+@color-assist4: #f5f5f5;
+
+//3.文字
+@color-text1: #555;
+@color-text2: #959595;
+@color-text3: #fff;
+
+
+
+//字体定义规范
+@font-size-small-s: .22rem;
+@font-size-small: .24rem; 
+@font-size-medium: .26rem;
+@font-size-medium-x: .30rem;
+@font-size-medium-xx: .32rem;
+@font-size-large: .34rem;
+@font-size-large-x: .48rem;
+@font-size-large-xx: .58rem;
+
+@font-family-title: 'PingFangSC Medium';
+@font-family-text: 'PingFang SC Regular';
+@font-family-text-s: 'PingFang HK Regular';
+@font-family-text-x: 'PingFang SC light';
+@font-family-num: 'SF Pro Text Regular'; // 数字、英文
+
+
+
+// 颜色定义规范--嗨森淘
+//1.主色
+// @color-main1: #cf121b;
+// @color-main2:#ed7700;
+
+// //2.辅色
+// @color-assist:#7c7c7c;
+// @color-assist1:#7c7c7c;
+// @color-assist2:#4e4e4e;
+// @color-assist3:#d6d6d6;
+// @color-assist4: #f5f5f5;
+
+// //3.文字
+// @color-text1: #333;
+// @color-text2: #7c7c7c;
+// @color-text3: #fff;
+
+
+ 
+// //字体定义规范
+// @font-size-small-s: .22rem;
+// @font-size-small: .24rem; 
+// @font-size-medium: .26rem;
+// @font-size-medium-x: .30rem;
+// @font-size-medium-xx: .32rem;
+// @font-size-large: .34rem;
+// @font-size-large-x: .48rem;
+// @font-size-large-xx: .58rem;
+// @font-size-large-xxx:.9rem;
+
+// @font-family-title: 'PingFang SC Bold';
+// @font-family-text: 'PingFang SC Regular';
+// @font-family-text-s: 'PingFang SC Regular';
+// @font-family-text-x: 'SF Pro Text Regular';
+// @font-family-num: 'sf pro text light'; // 数字、英文
+
+//上边框
+.bt(@color){
+  border-top: 1px solid @color;
+  // box-shadow: inset 0px .3px .3px -.3px @color;
+  // @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3){
+  //   box-shadow: inset 0px .4px .4px -.4px @color-assist3;
+  // }
+  // position: relative;
+  // &:after{
+  //   content: '';
+  //   height: 92px;
+  //   width: 1px;
+  //   position: absolute;
+  //   left: auto;
+  //   top: 0px;
+  //   right: 0px;
+  //   bottom: auto;
+  //   background-color: #e5e5e5;
+  //   border: 0px solid transparent;
+  //   border-radius: 0px;
+  //   -webkit-border-radius: 0px;
+  //   transform: scale(0.5);
+  //   -webkit-transform: scale(0.5);
+  // }
+}
+// 下边框
+.bd(@color){
+  border-bottom: 1px solid @color;
+
+}
+
+// 右边框
+.br(@color){
+  border-right: 1px solid @color;
+
+
+}
+
+//左边框
+.bl(@color){
+  border-left: 1px solid @color;
+
+
+}
+
+// 四边边框
+.ba(@color,@border-radius){
+border:1px solid @color;
+border-radius: @border-radius;
+}
+
+
+// 背景图片
+.bg-image(@url){
+  background-image: url("./@{siteConfiguration}@{url}@2x.png");
+  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3){
+    background-image: url("./@{siteConfiguration}@{url}@3x.png");
+  }
+}
+
+
+// 不换行
+.no-wrap(@clamp){
+overflow : hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: @clamp;
+-webkit-box-orient: vertical;
+}
+
+// 扩展点击区域
+.extend-click(){
+  position: relative;
+  &:before{
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;  
+  }
+}
+.num_{
+    font-family: @font-family-num;
+}
+
+.grey{
+    background-color: @color-assist4;
+}
+
+
+//图标
+.icon-photo(){
+  .bg-image('/icon/icon-photo');
+  display: inline-block;
+  width: .44rem;
+  height: .36rem;
+  background-size: cover;
+  .extend-click();
+  background-repeat: no-repeat;
+}
+.icon-edit(){
+  .bg-image('/icon/icon-edit');
+  display: inline-block;
+  width: .40rem;
+  height: .41rem;
+  background-size: cover;
+  .extend-click();
+  background-repeat: no-repeat;
+}
+.icon-dotted(){
+  .bg-image('/icon/icon-dotted');
+  display: inline-block;
+  width: .36rem;
+  height: .36rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.icon-clock(){
+  display: inline-block;
+  width: .28rem;
+  height: .28rem;
+  background-size: cover;
+  .bg-image('/icon/icon-clock');
+  background-repeat: no-repeat;
+  .extend-click();
+
+}
+.icon-checked02(){
+    display: inline-block;
+    width: .28rem;
+    height: .28rem;
+    .bg-image('/icon/icon-checked02');
+    background-size: cover;
+    margin-right: .16rem;
+    background-repeat: no-repeat;
+    .extend-click();
+}
+.icon-check(){
+    display: inline-block;
+    width: .32rem;
+    height: .32rem;
+    .bg-image('/icon/icon-check');
+    background-size: cover;
+    background-repeat: no-repeat;
+    .extend-click();
+}
+  .icon-order(){
+    display: inline-block;
+    width: .22rem;
+    height: .26rem;
+    .bg-image('/icon/icon-order');
+    background-size: cover;
+    background-repeat: no-repeat;
+    .extend-click();
+  }
+  .icon-shop(){
+    display: inline-block;
+    width: .28rem;
+    height: .28rem;
+    .bg-image('/icon/icon-shop');
+    background-size: cover;
+    background-repeat: no-repeat;
+    .extend-click();
+  }
+  .icon-price(){
+    display: inline-block;
+    width: .28rem;
+    height: .28rem;
+    .bg-image('/icon/icon-price');
+    background-size: cover;
+    background-repeat: no-repeat;
+    .extend-click();
+  }
+.icon-shearch01(){
+  .bg-image('/icon/icon-shearch01');
+  display: inline-block;
+  width: .25rem;
+  height: .25rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  .extend-click();
+}
+.icon-phone(){
+  .bg-image('/icon/icon-phone');
+  display: inline-block;
+  width: .32rem;
+  height: .32rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  .extend-click();
+}
+.icon-clear(){
+  .bg-image('/icon/icon-clear');
+  display: inline-block;
+  width: .28rem;
+  height: .28rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  .extend-click();
+}
+.icon-arrows(){
+  .bg-image('/icon/icon-arrows');
+  display: inline-block;
+  width: .24rem;
+  height: .24rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  .extend-click();
+}
+.icon-close-red(){
+  .bg-image('/icon/icon-close-red');
+  display: inline-block;
+  width: .26rem;
+  height: .26rem;
+  background-size: cover;
+  .extend-click();
+  background-repeat: no-repeat;
+}
+
+.icon-delete(){
+  .bg-image('/icon/icon-delete');
+  display: inline-block;
+  width: .36rem;
+  height: .44rem;
+  background-size: cover;
+  .extend-click();
+  background-repeat: no-repeat;
+}
+.icon-close(){
+  .bg-image('/icon/icon-close');
+  display: inline-block;
+  width: .26rem;
+  height: .26rem;
+  background-size: cover;
+  .extend-click();
+  background-repeat: no-repeat;
+}
+.icon-search(){
+  .bg-image('/icon/icon-search');
+  background-size: cover;
+  display: inline-block;
+  width: .36rem;
+  height: .36rem;
+  .extend-click();
+  background-repeat: no-repeat;
+}
+.icon-chevron-down(){
+    .bg-image('/icon/icon-chevron-down');
+    background-size: cover;
+    display: inline-block;
+    width: .22rem;
+    height: .14rem;
+    .extend-click();
+    background-repeat: no-repeat;
+}
+.icon-tochecked(){
+    .bg-image('/icon/icon-tochecked') !important;
+    background-size: cover;
+    display: inline-block;
+    width: .32rem;
+    height: .32rem;
+    .extend-click();
+    background-repeat: no-repeat;
+}   
+
+.icon-address(){
+  display: inline-block;
+  width: .22rem;
+  height: .26rem;
+  .bg-image('/icon/icon-address');
+  background-size: cover;
+  .extend-click();
+  background-repeat: no-repeat;
+}
+
+  .icon-back(){
+    .bg-image('/icon/icon-back');
+    background-size: cover;
+    display: inline-block;
+    width: .36rem;
+    height: .36rem;
+    .extend-click();
+    background-repeat: no-repeat;
+    &.active{
+    .bg-image('/icon/icon-back01');
+    .extend-click();
+    }
+  }
+  .icon-share(){
+    width: .44rem;
+    height: .44rem;
+    .bg-image('/icon/icon-share');
+    background-size: cover;
+    display: inline-block;
+    .extend-click();
+    position: absolute;
+    top: .305rem;
+    right: .24rem ;
+    background-repeat: no-repeat;
+  }
+  .icon-add(){
+    display: inline-block;
+    width: .44rem;
+    height: .44rem;
+    background-size: cover;
+    .bg-image('/icon/icon-add');
+    .extend-click();
+    background-repeat: no-repeat;
+  } 
+.icon-top(){
+  display: inline-block;
+  width: .24rem;
+  height: .12rem;
+  .bg-image('/icon/tip-top');
+  .extend-click();
+  background-repeat: no-repeat;
+
+} 
+  .icon-car(){
+    display: inline-block;
+    width: .28rem;
+    height: .23rem;
+    vertical-align: middle;
+    .bg-image('/icon/icon-car');
+    background-size: cover;
+    background-repeat: no-repeat;
+    .extend-click();
+  }
